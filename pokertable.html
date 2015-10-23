@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lnng="en">
+<head>
+ <script src="jquery-1.11.2.min.js"></script>
+ <!-- Created by Ole Halvor Dahl -->
+ <meta charset="utf-8">
+ <link rel="stylesheet" href="stil.css"></link>
+ <meta name="dcterms.created" content="tor, 23 okt 2014 08:49:45 GMT">
+ <meta name="description" content="">
+ <meta name="keywords" content="">
+ <script src="jquery-1.11.2.min.js"></script>
+ <script src="pokerLogic.js"></script> <!-- This is the main javascript for the functions of the page -->
+ <title>Poker</title>
+</head>
+<body>
+  <h1 id="display-area" style="padding:0px;margin:0px;border:0px;"  > 00:00:00 </h1>   <!-- This H1 element is the clock output !-->
+  <div id="right">
+   <div id="kropp">
+    <audio id="audiotag1" src="lyd.mp3" preload="auto"></audio>
+    <div id="klokker">
+      <button id="start" style="width: 100px">Start</button>
+      <button id="reset">Reset</button>
+      <output id="info"> Off </output>
+    </div>
+    <div id="pause">
+      <label>Pause after level:</label><input type="checkbox" id="pausevalg" />
+      <label>Enable sound:</label><input type="checkbox" id="lydvalg" value="checked"  />
+      <div id="curlev"> 
+        <label>level:</label>
+        <output id="currentlevel">0</output>
+      </div>
+    </div>
+
+    <!-- Level-Table !-->
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:Arial, sans-serif;font-size:12px;padding:1px 1px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg th{font-family:Arial, sans-serif;font-size:12px;font-weight:normal;padding:1px 1px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg{width:80%;margin-left:auto;margin-right:auto;border-collapse:collapse;}
+    .tg td{padding:7px; border:#4e95f4 1px solid;}
+    .tg tr{background: #b8d1f3;height:5px;}
+    .tg tr:nth-child(odd){ background: #b8d1f3;}
+    .tg tr:nth-child(even){background: #dae5f4;}
+    </style>
+    <div id="tables">
+      <table class="tg" id="tab1"><tbody>
+        <tr>
+          <th class="tg-031e"  style="background: #A5A5A5;font-size: larger; width: 20%;"><b>Level</b></th>
+          <th class="tg-031e" style="background: #A5A5A5;width: 20%;"><b>Blinds</b></th>
+          <th class="tg-031e" style="background: #A5A5A5;width: 20%;"><b>Ante</b></th>
+          <th class="tg-031e" style="background: #A5A5A5;width: 20%;"><b>Length</b></th>
+          <th class="tg-031e" style="background: #A5A5A5;width: 20%;"><b>Comment</b></th>
+          <th class="tg-031e" style="background: #A5A5A5;" hidden="true" ><b>Current</b></th>
+        </tr>
+        <tbody></table>
+          <!-- Blind-Table !-->
+          <style type="text/css">
+          .tg  {border-collapse:collapse;border-spacing:0;}
+          .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+          .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:1px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+          .tg{width:100%; border-collapse:collapse;}
+          .tg td{padding:4px; border:#4e95f4 1px solid;}
+          .tg tr:hover {background-color: #EFEFEF;}
+          </style>
+          <table class="tg" id="tab2">
+            <tr style="padding:12px;font-size:24px;">
+              <th class="tg-031e" style="background: #A5A5A5;padding:1px;font-size:18px;"></th>
+              <th class="tg-031e" style="background: #FAFAFA;padding:1px;font-size:18px;">White</th>
+              <th class="tg-031e" style="background: red;padding:1px;font-size:18px; color:white; border-color:black;">Red</th>
+              <th class="tg-031e" style="background: blue;padding:1px;font-size:18px; color:white; border-color:black;">Blue</th>
+              <th class="tg-031e" style="background: green;padding:1px;font-size:18px; color:white; border-color:black;">Green</th>
+              <th class="tg-031e" style="background: black;padding:1px;font-size:18px; color:white; border-color:black;">Black</th>
+            </tr>
+            <tr id="valRow">
+              <td class="tg-031e" style="padding:0px;font-size:18px;">Value</td>
+              <td id="chip1" style="padding:1px;font-size:18px;" class="tg-031e">2</td>
+              <td id="chip2" style="padding:1px;font-size:18px;" class="tg-031e">5</td>
+              <td id="chip3" style="padding:1px;font-size:18px;" class="tg-031e">25</td>
+              <td id="chip4" style="padding:1px;font-size:18px;" class="tg-031e">100</td>
+              <td id="chip5" style="padding:1px;font-size:18px;" class="tg-031e">500</td>
+            </tr>
+          </table>
+          <a href="forms.php" style="float:left;"> Back to configuration (your current table configuration will be lost) </a>
+          <input type="button" value="Save table" id="savebtn" style="float:right; "/>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
